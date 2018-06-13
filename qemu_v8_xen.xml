@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+        <remote name="github"   fetch="https://github.com" />
+
+        <default remote="github" revision="master" />
+
+        <!-- OP-TEE gits -->
+        <project path="optee_client"         name="OP-TEE/optee_client.git" />
+        <project path="optee_os"             name="lorc/optee_os.git" revision="refs/heads/virt_wip"/>
+        <project path="optee_test"           name="OP-TEE/optee_test.git" />
+        <project path="build"                name="lorc/optee-build.git" revision="refs/heads/qemu_v8_xen">
+                <linkfile src="qemu_v8_xen.mk" dest="build/Makefile" />
+                <linkfile src="../toolchains/aarch64/bin/aarch64-linux-gnu-gdb" dest="build/gdb" />
+        </project>
+
+        <!-- linaro-swg gits -->
+        <project path="linux"                name="lorc/linux.git"                  revision="wo_static_shm" />
+        <project path="optee_benchmark"      name="linaro-swg/optee_benchmark.git"/>
+        <project path="optee_examples"       name="linaro-swg/optee_examples.git" />
+        <project path="soc_term"             name="linaro-swg/soc_term.git"               revision="5493a6e7c264536f5ca63fe7511e5eed991e4f20" />
+
+        <!-- Misc gits -->
+        <project path="arm-trusted-firmware" name="lorc/arm-trusted-firmware.git"	  revision="refs/heads/qemu_gicv3" clone-depth="1" />
+        <project path="edk2"                 name="lorc/edk2.git"			  revision="refs/heads/flash_fix" />
+        <project path="qemu"                 name="qemu/qemu.git"                         revision="refs/tags/v2.12.0" clone-depth="1" />
+        <project path="buildroot"            name="buildroot/buildroot.git"               revision="62dca337fe72085d98b7603cfcff1279c48ba7d9" />
+</manifest>
